@@ -1,0 +1,225 @@
+body {
+  	font-family: 'Poppins', sans-serif;
+    background-color: rgb(7, 6, 24);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.section, .timeset, .countdown-area {
+    display: flex;
+
+
+    
+}
+
+.section {
+    flex-direction: row;
+    height: auto;
+    width: 100%;
+    color: #fff;
+    
+}
+
+
+.timeset {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+    width: 30%;
+    padding: auto 30px;
+    gap: 20px
+}
+
+
+.timeset form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 200px;
+    gap: 10px;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 20px; 
+}
+
+.input-group input {
+    border-radius: 7px;
+    padding: 5px;
+    width: 150px;
+    align-self: flex-end;
+}
+
+.input-group label {
+    text-align: left;
+}
+
+form button {
+    height: 30px;
+    width: 100px;
+    /* align-self: flex-start; */
+    /* margin-right: 35px; */
+    border-radius: 5px;
+    border: 1px solid #fff;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: rgb(13, 3, 58);
+    color: #fff;
+    border: 1px solid #fff;
+
+}
+
+.countdown-area {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 70%;
+    gap: 100px;
+    
+}
+
+.countdown-area .time {
+    font-size: 12vw;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+}
+
+.envelope {
+    margin-top: 100px;
+    width: 500px;
+	height: 250px;
+	position: relative;
+    transform: rotate(15deg);
+    
+}
+.envelope .rectangle-body {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: #3a083a;
+}
+
+.rectangle-body .triangle {
+    width: 500px;
+    height: 250px;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    position: absolute;
+}
+
+.triangle:nth-child(1) {
+    /* background-color: yellow; */
+    background: linear-gradient(90deg, #9b2a9b, #7a1f7a);
+    left: -250px;
+    z-index: 2;
+}
+.triangle:nth-child(2) {
+    /* background-color: rgb(0, 255, 13); */
+    background: linear-gradient(90deg, #9b2a9b, #7a1f7a);
+    right: -250px;
+    /* background: #fff; */
+    z-index: 2;
+    
+}
+.triangle:nth-child(3) {
+
+
+    /* background-color: rgb(0, 153, 255); */
+    background: linear-gradient(270deg, #9b2a9b, #7a1f7a);
+    bottom: -125px;
+    z-index: 2;
+
+}
+.triangle:nth-child(4) {
+    /* background-color: rgb(195, 0, 255); */
+    background: linear-gradient(270deg, #9b2a9b, #7a1f7a);
+    top: -125px;
+        /* transition: ease-out 2s; */
+    display: block;
+    /* z-index: -100; */
+}
+
+.triangle:nth-child(4).remove {
+    /* display: none; */
+}
+
+.envelope .outside {
+    background: linear-gradient(270deg, #9b2a9b, #7a1f7a);
+    width: 498px;
+    height: 250px;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    position: absolute;
+    background: linear-gradient(
+        135deg,
+        #9b2a9b,
+        #7a1f7a
+    );
+    /* background: aliceblue !important; */
+    top: -122px;
+    left: 1px;
+    z-index: -1;
+    border-radius: 10px;
+    
+    display: none;
+}
+
+.envelope .outside.outside-opened {
+    display: block;
+    transition: all 2s ease-in;
+}
+
+.card-content{
+    display: none;
+    height: 300px;
+    width: 250px;
+    background-color: #f8f0f0;
+    align-content: center;
+    border-radius: 5px;
+    position: absolute;
+
+    z-index: 1;
+        transform: translateY(150px) rotate(15deg);
+    opacity: 0;
+
+    transition: transform 0.5s ease-in, opacity 0.5s ease-in;
+}
+
+.card-content span{
+    color: black;
+    /* text-align: justify; */
+    /* text-align: center; */
+    margin: 10px 40px;
+    font-size: 25px;
+    font-family: 'Brush Script MT', cursive;
+    
+    
+}
+.card-content-shown{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: -130px;
+    left: 150px;
+    transform: translateY(0) rotate(15deg);
+    opacity: 1;
+    transition: all 2s ease-in;
+}
+
+
+@media screen and (max-width: 900px) {
+    .section {
+        flex-direction: column;
+        /* justify-content: center; */
+        align-items: center;
+        gap: 50px;
+    }
+}
